@@ -1,0 +1,302 @@
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes mostrar {
+
+  0%,
+  50% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50.1%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #121212;
+  display: grid;
+  place-content: center;
+  font-family: monospace, sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.caixa {
+  position: relative;
+  width: 850px;
+  height: 500px;
+  background-color: #333;
+  box-shadow: 25px 30px 55px #5557;
+  border-radius: 15px;
+  overflow: hidden;
+  animation: aparecer 3s both;
+}
+
+.formulario {
+  position: absolute;
+  width: 60%;
+  height: 100%;
+  padding: 0px 40px;
+  transition: all 0.6s ease-in-out;
+}
+
+.cadastro {
+  opacity: 0;
+  z-index: 1;
+}
+
+.login {
+  z-index: 2;
+}
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 50px;
+}
+
+h1 {
+  color: orangered;
+}
+
+.lista-sociais {
+  margin: 20px 0px;
+}
+
+.lista-sociais a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 5px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.lista-sociais a:hover {
+  border: 1px solid orange;
+  transition: 0.5s;
+}
+
+span {
+  font-size: 14px
+}
+
+.dentro {
+  position: relative;
+  margin: 8px 0px;
+  width: 100%;
+}
+
+input {
+  color: white;
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #121212;
+  border: none;
+  outline: none;
+  border-radius: 10px 10px 0px 0px;
+}
+
+label {
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, red, orange);
+  transition: 0.3s;
+}
+
+input:focus~label {
+  width: 100%;
+}
+
+a {
+  color: orangered;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 15px 0px;
+}
+
+.esqueceu a[active] {
+  color: rgb(255, 69, 0) !important;
+}
+
+.esqueceu a[disabled] {
+  color: rgb(255, 69, 0, 0.5) !important;
+}
+
+.esqueceu {
+  padding-bottom: 3px;
+  border-bottom: 2px solid white;
+  transition: 0.5s;
+}
+
+.esqueceu:hover {
+  padding-bottom: 3px;
+  border-bottom: 2px solid orange;
+  transition: 0.5s;
+}
+
+button {
+  color: white;
+  background-color: orangered;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.formulario button {
+  margin-top: 17px;
+  transition: 0.5s;
+}
+
+.formulario button:hover {
+  transition: 0.5s;
+  color: black;
+  background: orange;
+}
+
+.caixa-overlay {
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 9;
+}
+
+#botao_overlay {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 304px;
+  transform: translateX(-50%);
+  width: 143.67px;
+  height: 40px;
+  border: 1px solid white;
+  background: transparent;
+  border-radius: 20px;
+}
+
+.overlay {
+  position: relative;
+  background: linear-gradient(90deg, #121212, #333);
+  color: white;
+  left: -150%;
+  height: 100%;
+  width: 250%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.painel-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 40px;
+  text-align: center;
+  height: 100%;
+  width: 340px;
+  transition: 0.6s ease-in-out;
+}
+
+.painel-overlay h1 {
+  color: orange;
+}
+
+.overlay-esquerda {
+  right: 60%;
+  transform: translateX(-12%);
+}
+
+.overlay-direita {
+  right: 0;
+  transform: translateX(0%);
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: 0, 5px;
+  margin: 25px 0px 35px;
+}
+
+.painel-overlay button {
+  border: none;
+  background: transparent;
+  transition: 0.5s;
+}
+
+.botao_chato {
+  border: none;
+  background: rgb(0, 0, 0, 0) !important;
+  transition: 0.5s;
+}
+
+.botao_chato:hover {
+  border: none;
+  border-color: orange !important;
+  transition: 0.5s;
+}
+
+.ativar-painel-direito .caixa-overlay {
+  transform: translateX(-150%);
+}
+
+.ativar-painel-direito .overlay {
+  transform: translateX(50%);
+}
+
+.ativar-painel-direito .overlay-esquerda {
+  transform: translateX(25%);
+}
+
+.ativar-painel-direito .overlay-direita {
+  transform: translateX(35%);
+}
+
+.ativar-painel-direito .login {
+  transform: translateX(20%);
+  opacity: 0;
+}
+
+.ativar-painel-direito .cadastro {
+  transform: translateX(66.7%);
+  opacity: 1;
+  z-index: 5;
+  animation: mostrar 0.6s;
+}

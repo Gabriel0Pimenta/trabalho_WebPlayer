@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in || Sign up from</title>
+  <!-- font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css stylesheet -->
+  <link rel="stylesheet" href="estilo_login.css">
+</head>
+
+<body>
+
+  <div class="caixa" id="caixa">
+
+
+    <div class="formulario cadastro">
+      <form action="#">
+        <h1>cadastrar Conta</h1>
+        <div class="lista-sociais">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>Usar e-mail para registrar</span>
+        <div class="dentro">
+          <input type="text" placeholder="Nome" id="nomes" />
+          <label></label>
+        </div>
+        <div class="dentro">
+          <input type="email" placeholder="E-mail" name="email" id="emails" />
+          <label></label>
+        </div>
+        <div class="dentro">
+          <input type="password" placeholder="Senha" id="senhas" />
+          <label></label>
+        </div>
+        <button id="botao_cadastro">Cadastrar</button>
+      </form>
+    </div>
+
+
+    <div class="formulario login">
+      <form action="#">
+        <h1>Login</h1>
+        <div class="lista-sociais">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>Entre com sua conta</span>
+        <div class="dentro">
+          <input type="email" placeholder="E-mail" name="email" onchange="ValidarCampos()" />
+          <label></label>
+        </div>
+        <div class="dentro">
+          <input type="password" placeholder="Senha" onchange="ValidarCampos()" />
+          <label></label>
+        </div>
+        <a href="#" class="esqueceu" id="recuperar">Esqueceu sua senha?</a>
+        <button id="botao_login">Login</button>
+      </form>
+    </div>
+
+
+    <div class="caixa-overlay" id="IconeOverlay">
+      <div class="overlay">
+        <div class="painel-overlay overlay-esquerda">
+          <h1>Logar</h1>
+          <p>Se já possui uma conta, faça o login</p>
+          <button> --> </button>
+        </div>
+        <div class="painel-overlay overlay-direita">
+          <h1>Cadastrar</h1>
+          <p>Sem uma conta, sem problema, crie uma agora mesmo!</p>
+          <button> <-- </button>
+        </div>
+      </div>
+      <button class="botao_chato" id="botao_overlay"></button>
+    </div>
+
+
+  </div>
+
+  <script src="script_login.js"></script>
+</body>
+
+</html>
